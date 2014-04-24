@@ -178,6 +178,8 @@ class MoviesSimilarities(MRJob):
         De La Soul;2Pac;0.4;2
 
         '''
+        # need to do some sorting here to get the too K though.
+        #key_sim.sort(key=itemgetter(2),reverse=True), I think
         item_x, corr_sim, cos_sim, reg_corr_sim, jaccard_sim = key_sim
         for item_y, n in similar_ns:
             yield None, (item_x, item_y, corr_sim, cos_sim, reg_corr_sim,
